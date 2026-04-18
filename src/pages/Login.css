@@ -1,0 +1,52 @@
+body{
+ background: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #0a192f,
+    #020617
+  );
+  color:white;
+  margin:0;
+  text-align:center;
+  
+  
+}
+
+
+button{
+  
+  background:transparent;
+  border:none;
+
+  cursor:pointer;
+  color:rgb(69, 60, 9);
+  font-size:15px;
+
+}
+.portal{
+  text-align:center;
+  flex-direction:column;
+  justify-content:center;
+
+}
+.card-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:80px;
+  margin-top:80px;
+
+
+}
+.Card{
+  
+width:300px;
+  border-radius:20px;
+ padding:30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align:center;
+  transition:0.3s;
+}
