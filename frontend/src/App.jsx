@@ -1,17 +1,11 @@
-import { Routes, Route } from "react-router-dom";
-
-import Login from "./pages/Login";
-import User from "./pages/User";
-import Admin from "./pages/Admin";
+import ActiveItems from "./ActiveItems";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/User" element={<User />} />
-      <Route path="/Admin" element={<Admin/>}/>
-    
-  </Routes>
-  );  
+    <div>
+      <ActiveItems />
+    </div>
+  );
 }
+
 export default App;
