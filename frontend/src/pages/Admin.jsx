@@ -3,18 +3,32 @@ import "./Admin.css"
 import { useState } from "react";
 import {useNavigate} from "react-router-dom"
 export default function Admin() {
-    const [name, setName] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
-    const navigate = useNavigate();
-    const handleLogin = () => {
-        if (name === "admin" && password === "1234") {
-            navigate("/");
-        }
-        else {
-            setError("Invalid Username or Password");
-        }
-    };
+   const [username, setUsername] = useState("");
+   const [password, setPassword] = useState("");
+   const navigate = useNavigate();
+
+   const handleLogin = async () => {
+     const res = await fetch("http://localhost:5000/login", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify({
+         username,
+         password,
+         role: "LAB", 
+       }),
+     });
+
+     const data = await res.json();
+
+     if (res.ok) {
+       localStorage.setItem("user", JSON.stringify(data.user));
+       navigate("/Dashboard");
+     } else {
+       alert(data.message);
+     }
+   };
   return (
     <div className="page">
       <div className="Signup">
@@ -24,8 +38,8 @@ export default function Admin() {
           <input
             type="text"
             placeholder="Username"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div className="form-row">
@@ -37,7 +51,7 @@ export default function Admin() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        
         <button onClick={handleLogin}>LOGIN →</button>
       </div>
     </div>

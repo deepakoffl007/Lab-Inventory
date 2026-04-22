@@ -1,0 +1,65 @@
+body{
+    margin:0;
+    align-items:center;
+    display:flex;
+
+    justify-content:center;
+}
+.page{
+  min-height:100vh;
+}.Signup{
+    width:300px;
+    padding:30px;
+    border-radius:20px;
+    display:flex;
+    background:white;
+    color:rgb(182, 197, 27);
+    text-align:center;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background: rgba(31, 208, 208, 0.05);
+  border: 1px solid rgba(32, 207, 195, 0.1);
+  box-shadow: 0 10px 30px rgba(19, 140, 164, 0.5);
+  transition:0.3s;
+margin-top:300px;
+
+
+}
+.Signup button{
+     background:transparent;
+  border:none;
+margin-top:5px;
+  cursor:pointer;
+  color:rgb(16, 173, 73);
+  font-size:15px;
+
+
+}
+
+.form-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.form-row label{
+  text-align:left;
+  width:100px;
+  margin-right:10px;
+  color: #c7f36b;
+}
+.form-row input {
+  width: 200px;          
+  padding: 8px;
+  border-radius: 5px;
+  
+  outline: none;
+  border: 1px solid rgba(255,255,255,0.2);  
+  outline: none;
+
+  background: rgba(255,255,255,0.08);        
+  color: white;
+               
+
+  transition: 0.3s;
+}

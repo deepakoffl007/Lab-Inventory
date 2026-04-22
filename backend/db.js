@@ -1,18 +1,16 @@
-const mysql = require("mysql2");
+require("dotenv").config();
+const { Pool } = require("pg");
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "admin",
-  database: "lab_inventory_system",
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
-db.connect((err) => {
-  if (err) {
-    console.log("DB connection failed:", err);
-  } else {
-    console.log("Connected to MySQL");
-  }
-});
+pool
+  .connect()
+  .then(() => console.log("Connected to Supabase PostgreSQL"))
+  .catch((err) => console.log("DB Error:", err));
 
-module.exports = db;
+module.exports = pool;
