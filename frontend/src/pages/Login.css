@@ -1,11 +1,20 @@
 body{
- background: linear-gradient(
-    135deg,
-    #0f172a,
-    #1e293b,
-    #0a192f,
-    #020617
-  );
+ background: radial-gradient(
+      ellipse at 70% 50%,
+      rgba(60, 90, 130, 0.35),
+      transparent 60%
+    ),
+    linear-gradient(
+      90deg,
+      #020617 0%,
+      #03142a 30%,
+      #0a1f3a 60%,
+      #0f2a47 100%
+    );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
   color:white;
   margin:0;
   text-align:center;
@@ -49,4 +58,13 @@ width:300px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   text-align:center;
   transition:0.3s;
+}
+
+.back{
+  position: absolute;
+  top: 20px;
+  left: 0;
+  color:white;
+  cursor:pointer;
+ 
 }

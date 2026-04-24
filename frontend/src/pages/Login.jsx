@@ -14,17 +14,20 @@ function Card({ title, desc, link }) {
 
 export default function Login() {
   return (
-    <div className="page">
-      <div className="portal">
-        <h1>LAB-INVENTORY</h1>
-        <p>Select your authentication method</p>
-        <div className="card-container">
-          <Card title="User Access" desc="Personal-dashboard" link="/User" />
+    <>
+      
+      <div className="page">
+        <div className="portal">
+          <h1>LAB-INVENTORY</h1>
+          <p>Select your authentication method</p>
+          <div className="card-container">
+            <Card title="User Access" desc="Personal-dashboard" link="/User" />
 
-          <Card title="Admin-Access" desc="Admin-dashboard" link="/Admin" />
+            <Card title="Admin-Access" desc="Admin-dashboard" link="/Admin" />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

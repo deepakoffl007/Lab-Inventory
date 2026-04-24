@@ -1,7 +1,8 @@
 import "./Admin.css"
 
 import { useState } from "react";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import {Link} from "react-router-dom"
 export default function Admin() {
    const [username, setUsername] = useState("");
    const [password, setPassword] = useState("");
@@ -30,30 +31,37 @@ export default function Admin() {
      }
    };
   return (
-    <div className="page">
-      <div className="Signup">
-        <h1>Admin Login</h1>
-        <div className="form-row">
-          <label>Name : </label>
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className="form-row">
-          <label>Password : </label>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        
-        <button onClick={handleLogin}>LOGIN →</button>
+    <>
+      <div className="back">
+       
+          <button onClick={()=>navigate("/Login")}> ←  BACK</button>
+       
       </div>
-    </div>
+      <div className="page">
+        <div className="Signup">
+          <h1>Admin Login</h1>
+          <div className="form-row">
+            <label>Name : </label>
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="form-row">
+            <label>Password : </label>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <button onClick={handleLogin}>LOGIN →</button>
+        </div>
+      </div>
+    </>
   );
 }
